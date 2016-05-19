@@ -36,8 +36,8 @@ end
 bash 'update-rights-for-forwarding' do
   code <<-EOF
     set -e
-    chgrp #{g} $SSH_AUTH_SOCK
-    chgrp #{g} `dirname $SSH_AUTH_SOCK`
+    chgrp root $SSH_AUTH_SOCK
+    chgrp root `dirname $SSH_AUTH_SOCK`
     chmod 770 $SSH_AUTH_SOCK
     chmod 770 `dirname $SSH_AUTH_SOCK`
   EOF
